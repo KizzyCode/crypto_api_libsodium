@@ -4,7 +4,7 @@
 
 /// Checks if `$condition` evaluates to `true` and returns `$error` if this is not the case
 #[macro_export] macro_rules! check {
-    ($condition:expr, $error:expr) => (if !$condition { Err($error)? });
+	($condition:expr, $error:expr) => (if !$condition { Err($error)? });
 }
 /// Calls a libsodium function
 #[macro_export] macro_rules! sodium {
