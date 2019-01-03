@@ -1,0 +1,23 @@
+[package]
+name = "crypto_api_libsodium"
+version = "0.1.0"
+authors = ["Keziah Biermann <development@kizzycode.de>"]
+description = "This crate defines a general purpose API for various cryptographic primitives"
+license = "BSD-2-Clause OR MIT"
+repository = "https://github.com/KizzyCode/crypto_api_libsodium"
+readme = "README.md"
+edition = "2018"
+
+
+[profile.release]
+overflow-checks = true
+
+[profile.bench]
+overflow-checks = true
+
+
+[dependencies]
+crypto_api = { git = "https://github.com/KizzyCode/crypto_api" }
+
+[build-dependencies]
+pkg-config = "0.3.14"
