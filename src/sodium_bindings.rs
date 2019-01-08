@@ -271,57 +271,44 @@ pub const crypto_stream_salsa2012_NONCEBYTES: u32 = 8;
 pub const crypto_stream_salsa208_KEYBYTES: u32 = 32;
 pub const crypto_stream_salsa208_NONCEBYTES: u32 = 8;
 extern "C" {
-    #[link_name = "\u{1}_sodium_version_string"]
     pub fn sodium_version_string() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_library_version_major"]
     pub fn sodium_library_version_major() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_library_version_minor"]
     pub fn sodium_library_version_minor() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_library_minimal"]
     pub fn sodium_library_minimal() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_init"]
     pub fn sodium_init() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_set_misuse_handler"]
     pub fn sodium_set_misuse_handler(
         handler: ::std::option::Option<unsafe extern "C" fn()>,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_misuse"]
     pub fn sodium_misuse();
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_is_available"]
     pub fn crypto_aead_aes256gcm_is_available() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_keybytes"]
     pub fn crypto_aead_aes256gcm_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_nsecbytes"]
     pub fn crypto_aead_aes256gcm_nsecbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_npubbytes"]
     pub fn crypto_aead_aes256gcm_npubbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_abytes"]
     pub fn crypto_aead_aes256gcm_abytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_messagebytes_max"]
     pub fn crypto_aead_aes256gcm_messagebytes_max() -> usize;
 }
 #[repr(C, align(16))]
@@ -356,11 +343,9 @@ fn bindgen_test_layout_crypto_aead_aes256gcm_state_() {
 }
 pub type crypto_aead_aes256gcm_state = crypto_aead_aes256gcm_state_;
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_statebytes"]
     pub fn crypto_aead_aes256gcm_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_encrypt"]
     pub fn crypto_aead_aes256gcm_encrypt(
         c: *mut ::std::os::raw::c_uchar,
         clen_p: *mut ::std::os::raw::c_ulonglong,
@@ -374,7 +359,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_decrypt"]
     pub fn crypto_aead_aes256gcm_decrypt(
         m: *mut ::std::os::raw::c_uchar,
         mlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -388,7 +372,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_encrypt_detached"]
     pub fn crypto_aead_aes256gcm_encrypt_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -403,7 +386,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_decrypt_detached"]
     pub fn crypto_aead_aes256gcm_decrypt_detached(
         m: *mut ::std::os::raw::c_uchar,
         nsec: *mut ::std::os::raw::c_uchar,
@@ -417,14 +399,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_beforenm"]
     pub fn crypto_aead_aes256gcm_beforenm(
         ctx_: *mut crypto_aead_aes256gcm_state,
         k: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_encrypt_afternm"]
     pub fn crypto_aead_aes256gcm_encrypt_afternm(
         c: *mut ::std::os::raw::c_uchar,
         clen_p: *mut ::std::os::raw::c_ulonglong,
@@ -438,7 +418,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_decrypt_afternm"]
     pub fn crypto_aead_aes256gcm_decrypt_afternm(
         m: *mut ::std::os::raw::c_uchar,
         mlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -452,7 +431,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_encrypt_detached_afternm"]
     pub fn crypto_aead_aes256gcm_encrypt_detached_afternm(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -467,7 +445,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_decrypt_detached_afternm"]
     pub fn crypto_aead_aes256gcm_decrypt_detached_afternm(
         m: *mut ::std::os::raw::c_uchar,
         nsec: *mut ::std::os::raw::c_uchar,
@@ -481,31 +458,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_aes256gcm_keygen"]
     pub fn crypto_aead_aes256gcm_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_keybytes"]
     pub fn crypto_aead_chacha20poly1305_ietf_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_nsecbytes"]
     pub fn crypto_aead_chacha20poly1305_ietf_nsecbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_npubbytes"]
     pub fn crypto_aead_chacha20poly1305_ietf_npubbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_abytes"]
     pub fn crypto_aead_chacha20poly1305_ietf_abytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_messagebytes_max"]
     pub fn crypto_aead_chacha20poly1305_ietf_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_encrypt"]
     pub fn crypto_aead_chacha20poly1305_ietf_encrypt(
         c: *mut ::std::os::raw::c_uchar,
         clen_p: *mut ::std::os::raw::c_ulonglong,
@@ -519,7 +489,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_decrypt"]
     pub fn crypto_aead_chacha20poly1305_ietf_decrypt(
         m: *mut ::std::os::raw::c_uchar,
         mlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -533,7 +502,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_encrypt_detached"]
     pub fn crypto_aead_chacha20poly1305_ietf_encrypt_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -548,7 +516,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_decrypt_detached"]
     pub fn crypto_aead_chacha20poly1305_ietf_decrypt_detached(
         m: *mut ::std::os::raw::c_uchar,
         nsec: *mut ::std::os::raw::c_uchar,
@@ -562,31 +529,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_ietf_keygen"]
     pub fn crypto_aead_chacha20poly1305_ietf_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_keybytes"]
     pub fn crypto_aead_chacha20poly1305_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_nsecbytes"]
     pub fn crypto_aead_chacha20poly1305_nsecbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_npubbytes"]
     pub fn crypto_aead_chacha20poly1305_npubbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_abytes"]
     pub fn crypto_aead_chacha20poly1305_abytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_messagebytes_max"]
     pub fn crypto_aead_chacha20poly1305_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_encrypt"]
     pub fn crypto_aead_chacha20poly1305_encrypt(
         c: *mut ::std::os::raw::c_uchar,
         clen_p: *mut ::std::os::raw::c_ulonglong,
@@ -600,7 +560,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_decrypt"]
     pub fn crypto_aead_chacha20poly1305_decrypt(
         m: *mut ::std::os::raw::c_uchar,
         mlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -614,7 +573,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_encrypt_detached"]
     pub fn crypto_aead_chacha20poly1305_encrypt_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -629,7 +587,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_decrypt_detached"]
     pub fn crypto_aead_chacha20poly1305_decrypt_detached(
         m: *mut ::std::os::raw::c_uchar,
         nsec: *mut ::std::os::raw::c_uchar,
@@ -643,31 +600,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_chacha20poly1305_keygen"]
     pub fn crypto_aead_chacha20poly1305_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_keybytes"]
     pub fn crypto_aead_xchacha20poly1305_ietf_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_nsecbytes"]
     pub fn crypto_aead_xchacha20poly1305_ietf_nsecbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_npubbytes"]
     pub fn crypto_aead_xchacha20poly1305_ietf_npubbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_abytes"]
     pub fn crypto_aead_xchacha20poly1305_ietf_abytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_messagebytes_max"]
     pub fn crypto_aead_xchacha20poly1305_ietf_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_encrypt"]
     pub fn crypto_aead_xchacha20poly1305_ietf_encrypt(
         c: *mut ::std::os::raw::c_uchar,
         clen_p: *mut ::std::os::raw::c_ulonglong,
@@ -681,7 +631,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_decrypt"]
     pub fn crypto_aead_xchacha20poly1305_ietf_decrypt(
         m: *mut ::std::os::raw::c_uchar,
         mlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -695,7 +644,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_encrypt_detached"]
     pub fn crypto_aead_xchacha20poly1305_ietf_encrypt_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -710,7 +658,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_decrypt_detached"]
     pub fn crypto_aead_xchacha20poly1305_ietf_decrypt_detached(
         m: *mut ::std::os::raw::c_uchar,
         nsec: *mut ::std::os::raw::c_uchar,
@@ -724,7 +671,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_aead_xchacha20poly1305_ietf_keygen"]
     pub fn crypto_aead_xchacha20poly1305_ietf_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 #[repr(C)]
@@ -778,15 +724,12 @@ fn bindgen_test_layout_crypto_hash_sha512_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha512_statebytes"]
     pub fn crypto_hash_sha512_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha512_bytes"]
     pub fn crypto_hash_sha512_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha512"]
     pub fn crypto_hash_sha512(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -794,11 +737,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha512_init"]
     pub fn crypto_hash_sha512_init(state: *mut crypto_hash_sha512_state) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha512_update"]
     pub fn crypto_hash_sha512_update(
         state: *mut crypto_hash_sha512_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -806,22 +747,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha512_final"]
     pub fn crypto_hash_sha512_final(
         state: *mut crypto_hash_sha512_state,
         out: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_bytes"]
     pub fn crypto_auth_hmacsha512_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_keybytes"]
     pub fn crypto_auth_hmacsha512_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512"]
     pub fn crypto_auth_hmacsha512(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -830,7 +767,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_verify"]
     pub fn crypto_auth_hmacsha512_verify(
         h: *const ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -882,11 +818,9 @@ fn bindgen_test_layout_crypto_auth_hmacsha512_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_statebytes"]
     pub fn crypto_auth_hmacsha512_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_init"]
     pub fn crypto_auth_hmacsha512_init(
         state: *mut crypto_auth_hmacsha512_state,
         key: *const ::std::os::raw::c_uchar,
@@ -894,7 +828,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_update"]
     pub fn crypto_auth_hmacsha512_update(
         state: *mut crypto_auth_hmacsha512_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -902,26 +835,21 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_final"]
     pub fn crypto_auth_hmacsha512_final(
         state: *mut crypto_auth_hmacsha512_state,
         out: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512_keygen"]
     pub fn crypto_auth_hmacsha512_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_bytes"]
     pub fn crypto_auth_hmacsha512256_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_keybytes"]
     pub fn crypto_auth_hmacsha512256_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256"]
     pub fn crypto_auth_hmacsha512256(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -930,7 +858,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_verify"]
     pub fn crypto_auth_hmacsha512256_verify(
         h: *const ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -940,11 +867,9 @@ extern "C" {
 }
 pub type crypto_auth_hmacsha512256_state = crypto_auth_hmacsha512_state;
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_statebytes"]
     pub fn crypto_auth_hmacsha512256_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_init"]
     pub fn crypto_auth_hmacsha512256_init(
         state: *mut crypto_auth_hmacsha512256_state,
         key: *const ::std::os::raw::c_uchar,
@@ -952,7 +877,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_update"]
     pub fn crypto_auth_hmacsha512256_update(
         state: *mut crypto_auth_hmacsha512256_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -960,30 +884,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_final"]
     pub fn crypto_auth_hmacsha512256_final(
         state: *mut crypto_auth_hmacsha512256_state,
         out: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha512256_keygen"]
     pub fn crypto_auth_hmacsha512256_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_bytes"]
     pub fn crypto_auth_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_keybytes"]
     pub fn crypto_auth_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_primitive"]
     pub fn crypto_auth_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth"]
     pub fn crypto_auth(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -992,7 +910,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_verify"]
     pub fn crypto_auth_verify(
         h: *const ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1001,7 +918,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_keygen"]
     pub fn crypto_auth_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 #[repr(C)]
@@ -1055,15 +971,12 @@ fn bindgen_test_layout_crypto_hash_sha256_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha256_statebytes"]
     pub fn crypto_hash_sha256_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha256_bytes"]
     pub fn crypto_hash_sha256_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha256"]
     pub fn crypto_hash_sha256(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1071,11 +984,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha256_init"]
     pub fn crypto_hash_sha256_init(state: *mut crypto_hash_sha256_state) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha256_update"]
     pub fn crypto_hash_sha256_update(
         state: *mut crypto_hash_sha256_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -1083,22 +994,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_sha256_final"]
     pub fn crypto_hash_sha256_final(
         state: *mut crypto_hash_sha256_state,
         out: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_bytes"]
     pub fn crypto_auth_hmacsha256_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_keybytes"]
     pub fn crypto_auth_hmacsha256_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256"]
     pub fn crypto_auth_hmacsha256(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1107,7 +1014,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_verify"]
     pub fn crypto_auth_hmacsha256_verify(
         h: *const ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1159,11 +1065,9 @@ fn bindgen_test_layout_crypto_auth_hmacsha256_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_statebytes"]
     pub fn crypto_auth_hmacsha256_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_init"]
     pub fn crypto_auth_hmacsha256_init(
         state: *mut crypto_auth_hmacsha256_state,
         key: *const ::std::os::raw::c_uchar,
@@ -1171,7 +1075,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_update"]
     pub fn crypto_auth_hmacsha256_update(
         state: *mut crypto_auth_hmacsha256_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -1179,30 +1082,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_final"]
     pub fn crypto_auth_hmacsha256_final(
         state: *mut crypto_auth_hmacsha256_state,
         out: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_auth_hmacsha256_keygen"]
     pub fn crypto_auth_hmacsha256_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xsalsa20_keybytes"]
     pub fn crypto_stream_xsalsa20_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xsalsa20_noncebytes"]
     pub fn crypto_stream_xsalsa20_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xsalsa20_messagebytes_max"]
     pub fn crypto_stream_xsalsa20_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xsalsa20"]
     pub fn crypto_stream_xsalsa20(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -1211,7 +1108,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xsalsa20_xor"]
     pub fn crypto_stream_xsalsa20_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1221,7 +1117,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xsalsa20_xor_ic"]
     pub fn crypto_stream_xsalsa20_xor_ic(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1232,39 +1127,30 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xsalsa20_keygen"]
     pub fn crypto_stream_xsalsa20_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_seedbytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_seedbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_publickeybytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_publickeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_secretkeybytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_secretkeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_beforenmbytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_beforenmbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_noncebytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_macbytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_macbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_messagebytes_max"]
     pub fn crypto_box_curve25519xsalsa20poly1305_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_seed_keypair"]
     pub fn crypto_box_curve25519xsalsa20poly1305_seed_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
@@ -1272,14 +1158,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_keypair"]
     pub fn crypto_box_curve25519xsalsa20poly1305_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_beforenm"]
     pub fn crypto_box_curve25519xsalsa20poly1305_beforenm(
         k: *mut ::std::os::raw::c_uchar,
         pk: *const ::std::os::raw::c_uchar,
@@ -1287,15 +1171,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_boxzerobytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_boxzerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_zerobytes"]
     pub fn crypto_box_curve25519xsalsa20poly1305_zerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305"]
     pub fn crypto_box_curve25519xsalsa20poly1305(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1306,7 +1187,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_open"]
     pub fn crypto_box_curve25519xsalsa20poly1305_open(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1317,7 +1197,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_afternm"]
     pub fn crypto_box_curve25519xsalsa20poly1305_afternm(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1327,7 +1206,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xsalsa20poly1305_open_afternm"]
     pub fn crypto_box_curve25519xsalsa20poly1305_open_afternm(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1337,35 +1215,27 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_seedbytes"]
     pub fn crypto_box_seedbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_publickeybytes"]
     pub fn crypto_box_publickeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_secretkeybytes"]
     pub fn crypto_box_secretkeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_noncebytes"]
     pub fn crypto_box_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_macbytes"]
     pub fn crypto_box_macbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_messagebytes_max"]
     pub fn crypto_box_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_primitive"]
     pub fn crypto_box_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_seed_keypair"]
     pub fn crypto_box_seed_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
@@ -1373,11 +1243,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_keypair"]
     pub fn crypto_box_keypair(pk: *mut ::std::os::raw::c_uchar, sk: *mut ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_easy"]
     pub fn crypto_box_easy(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1388,7 +1256,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_open_easy"]
     pub fn crypto_box_open_easy(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1399,7 +1266,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_detached"]
     pub fn crypto_box_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -1411,7 +1277,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_open_detached"]
     pub fn crypto_box_open_detached(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1423,11 +1288,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_beforenmbytes"]
     pub fn crypto_box_beforenmbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_beforenm"]
     pub fn crypto_box_beforenm(
         k: *mut ::std::os::raw::c_uchar,
         pk: *const ::std::os::raw::c_uchar,
@@ -1435,7 +1298,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_easy_afternm"]
     pub fn crypto_box_easy_afternm(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1445,7 +1307,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_open_easy_afternm"]
     pub fn crypto_box_open_easy_afternm(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1455,7 +1316,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_detached_afternm"]
     pub fn crypto_box_detached_afternm(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -1466,7 +1326,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_open_detached_afternm"]
     pub fn crypto_box_open_detached_afternm(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1477,11 +1336,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_sealbytes"]
     pub fn crypto_box_sealbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_seal"]
     pub fn crypto_box_seal(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1490,7 +1347,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_seal_open"]
     pub fn crypto_box_seal_open(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1500,15 +1356,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_zerobytes"]
     pub fn crypto_box_zerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_boxzerobytes"]
     pub fn crypto_box_boxzerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box"]
     pub fn crypto_box(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1519,7 +1372,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_open"]
     pub fn crypto_box_open(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1530,7 +1382,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_afternm"]
     pub fn crypto_box_afternm(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -1540,7 +1391,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_open_afternm"]
     pub fn crypto_box_open_afternm(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -1550,23 +1400,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hsalsa20_outputbytes"]
     pub fn crypto_core_hsalsa20_outputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hsalsa20_inputbytes"]
     pub fn crypto_core_hsalsa20_inputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hsalsa20_keybytes"]
     pub fn crypto_core_hsalsa20_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hsalsa20_constbytes"]
     pub fn crypto_core_hsalsa20_constbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hsalsa20"]
     pub fn crypto_core_hsalsa20(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1575,23 +1420,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hchacha20_outputbytes"]
     pub fn crypto_core_hchacha20_outputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hchacha20_inputbytes"]
     pub fn crypto_core_hchacha20_inputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hchacha20_keybytes"]
     pub fn crypto_core_hchacha20_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hchacha20_constbytes"]
     pub fn crypto_core_hchacha20_constbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_hchacha20"]
     pub fn crypto_core_hchacha20(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1600,23 +1440,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa20_outputbytes"]
     pub fn crypto_core_salsa20_outputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa20_inputbytes"]
     pub fn crypto_core_salsa20_inputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa20_keybytes"]
     pub fn crypto_core_salsa20_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa20_constbytes"]
     pub fn crypto_core_salsa20_constbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa20"]
     pub fn crypto_core_salsa20(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1625,23 +1460,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa2012_outputbytes"]
     pub fn crypto_core_salsa2012_outputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa2012_inputbytes"]
     pub fn crypto_core_salsa2012_inputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa2012_keybytes"]
     pub fn crypto_core_salsa2012_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa2012_constbytes"]
     pub fn crypto_core_salsa2012_constbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa2012"]
     pub fn crypto_core_salsa2012(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1650,23 +1480,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa208_outputbytes"]
     pub fn crypto_core_salsa208_outputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa208_inputbytes"]
     pub fn crypto_core_salsa208_inputbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa208_keybytes"]
     pub fn crypto_core_salsa208_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa208_constbytes"]
     pub fn crypto_core_salsa208_constbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_salsa208"]
     pub fn crypto_core_salsa208(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1701,43 +1526,33 @@ fn bindgen_test_layout_crypto_generichash_blake2b_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_bytes_min"]
     pub fn crypto_generichash_blake2b_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_bytes_max"]
     pub fn crypto_generichash_blake2b_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_bytes"]
     pub fn crypto_generichash_blake2b_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_keybytes_min"]
     pub fn crypto_generichash_blake2b_keybytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_keybytes_max"]
     pub fn crypto_generichash_blake2b_keybytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_keybytes"]
     pub fn crypto_generichash_blake2b_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_saltbytes"]
     pub fn crypto_generichash_blake2b_saltbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_personalbytes"]
     pub fn crypto_generichash_blake2b_personalbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_statebytes"]
     pub fn crypto_generichash_blake2b_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b"]
     pub fn crypto_generichash_blake2b(
         out: *mut ::std::os::raw::c_uchar,
         outlen: usize,
@@ -1748,7 +1563,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_salt_personal"]
     pub fn crypto_generichash_blake2b_salt_personal(
         out: *mut ::std::os::raw::c_uchar,
         outlen: usize,
@@ -1761,7 +1575,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_init"]
     pub fn crypto_generichash_blake2b_init(
         state: *mut crypto_generichash_blake2b_state,
         key: *const ::std::os::raw::c_uchar,
@@ -1770,7 +1583,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_init_salt_personal"]
     pub fn crypto_generichash_blake2b_init_salt_personal(
         state: *mut crypto_generichash_blake2b_state,
         key: *const ::std::os::raw::c_uchar,
@@ -1781,7 +1593,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_update"]
     pub fn crypto_generichash_blake2b_update(
         state: *mut crypto_generichash_blake2b_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -1789,7 +1600,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_final"]
     pub fn crypto_generichash_blake2b_final(
         state: *mut crypto_generichash_blake2b_state,
         out: *mut ::std::os::raw::c_uchar,
@@ -1797,44 +1607,34 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_blake2b_keygen"]
     pub fn crypto_generichash_blake2b_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_bytes_min"]
     pub fn crypto_generichash_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_bytes_max"]
     pub fn crypto_generichash_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_bytes"]
     pub fn crypto_generichash_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_keybytes_min"]
     pub fn crypto_generichash_keybytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_keybytes_max"]
     pub fn crypto_generichash_keybytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_keybytes"]
     pub fn crypto_generichash_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_primitive"]
     pub fn crypto_generichash_primitive() -> *const ::std::os::raw::c_char;
 }
 pub type crypto_generichash_state = crypto_generichash_blake2b_state;
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_statebytes"]
     pub fn crypto_generichash_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash"]
     pub fn crypto_generichash(
         out: *mut ::std::os::raw::c_uchar,
         outlen: usize,
@@ -1845,7 +1645,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_init"]
     pub fn crypto_generichash_init(
         state: *mut crypto_generichash_state,
         key: *const ::std::os::raw::c_uchar,
@@ -1854,7 +1653,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_update"]
     pub fn crypto_generichash_update(
         state: *mut crypto_generichash_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -1862,7 +1660,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_final"]
     pub fn crypto_generichash_final(
         state: *mut crypto_generichash_state,
         out: *mut ::std::os::raw::c_uchar,
@@ -1870,15 +1667,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_generichash_keygen"]
     pub fn crypto_generichash_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_bytes"]
     pub fn crypto_hash_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash"]
     pub fn crypto_hash(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -1886,27 +1680,21 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_hash_primitive"]
     pub fn crypto_hash_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_blake2b_bytes_min"]
     pub fn crypto_kdf_blake2b_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_blake2b_bytes_max"]
     pub fn crypto_kdf_blake2b_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_blake2b_contextbytes"]
     pub fn crypto_kdf_blake2b_contextbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_blake2b_keybytes"]
     pub fn crypto_kdf_blake2b_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_blake2b_derive_from_key"]
     pub fn crypto_kdf_blake2b_derive_from_key(
         subkey: *mut ::std::os::raw::c_uchar,
         subkey_len: usize,
@@ -1916,27 +1704,21 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_bytes_min"]
     pub fn crypto_kdf_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_bytes_max"]
     pub fn crypto_kdf_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_contextbytes"]
     pub fn crypto_kdf_contextbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_keybytes"]
     pub fn crypto_kdf_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_primitive"]
     pub fn crypto_kdf_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_derive_from_key"]
     pub fn crypto_kdf_derive_from_key(
         subkey: *mut ::std::os::raw::c_uchar,
         subkey_len: usize,
@@ -1946,31 +1728,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kdf_keygen"]
     pub fn crypto_kdf_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_publickeybytes"]
     pub fn crypto_kx_publickeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_secretkeybytes"]
     pub fn crypto_kx_secretkeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_seedbytes"]
     pub fn crypto_kx_seedbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_sessionkeybytes"]
     pub fn crypto_kx_sessionkeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_primitive"]
     pub fn crypto_kx_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_seed_keypair"]
     pub fn crypto_kx_seed_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
@@ -1978,11 +1753,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_keypair"]
     pub fn crypto_kx_keypair(pk: *mut ::std::os::raw::c_uchar, sk: *mut ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_client_session_keys"]
     pub fn crypto_kx_client_session_keys(
         rx: *mut ::std::os::raw::c_uchar,
         tx: *mut ::std::os::raw::c_uchar,
@@ -1992,7 +1765,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_kx_server_session_keys"]
     pub fn crypto_kx_server_session_keys(
         rx: *mut ::std::os::raw::c_uchar,
         tx: *mut ::std::os::raw::c_uchar,
@@ -2028,19 +1800,15 @@ fn bindgen_test_layout_crypto_onetimeauth_poly1305_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_statebytes"]
     pub fn crypto_onetimeauth_poly1305_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_bytes"]
     pub fn crypto_onetimeauth_poly1305_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_keybytes"]
     pub fn crypto_onetimeauth_poly1305_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305"]
     pub fn crypto_onetimeauth_poly1305(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -2049,7 +1817,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_verify"]
     pub fn crypto_onetimeauth_poly1305_verify(
         h: *const ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -2058,14 +1825,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_init"]
     pub fn crypto_onetimeauth_poly1305_init(
         state: *mut crypto_onetimeauth_poly1305_state,
         key: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_update"]
     pub fn crypto_onetimeauth_poly1305_update(
         state: *mut crypto_onetimeauth_poly1305_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -2073,35 +1838,28 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_final"]
     pub fn crypto_onetimeauth_poly1305_final(
         state: *mut crypto_onetimeauth_poly1305_state,
         out: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_poly1305_keygen"]
     pub fn crypto_onetimeauth_poly1305_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 pub type crypto_onetimeauth_state = crypto_onetimeauth_poly1305_state;
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_statebytes"]
     pub fn crypto_onetimeauth_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_bytes"]
     pub fn crypto_onetimeauth_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_keybytes"]
     pub fn crypto_onetimeauth_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_primitive"]
     pub fn crypto_onetimeauth_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth"]
     pub fn crypto_onetimeauth(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -2110,7 +1868,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_verify"]
     pub fn crypto_onetimeauth_verify(
         h: *const ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -2119,14 +1876,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_init"]
     pub fn crypto_onetimeauth_init(
         state: *mut crypto_onetimeauth_state,
         key: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_update"]
     pub fn crypto_onetimeauth_update(
         state: *mut crypto_onetimeauth_state,
         in_: *const ::std::os::raw::c_uchar,
@@ -2134,90 +1889,69 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_final"]
     pub fn crypto_onetimeauth_final(
         state: *mut crypto_onetimeauth_state,
         out: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_onetimeauth_keygen"]
     pub fn crypto_onetimeauth_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_alg_argon2i13"]
     pub fn crypto_pwhash_argon2i_alg_argon2i13() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_bytes_min"]
     pub fn crypto_pwhash_argon2i_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_bytes_max"]
     pub fn crypto_pwhash_argon2i_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_passwd_min"]
     pub fn crypto_pwhash_argon2i_passwd_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_passwd_max"]
     pub fn crypto_pwhash_argon2i_passwd_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_saltbytes"]
     pub fn crypto_pwhash_argon2i_saltbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_strbytes"]
     pub fn crypto_pwhash_argon2i_strbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_strprefix"]
     pub fn crypto_pwhash_argon2i_strprefix() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_opslimit_min"]
     pub fn crypto_pwhash_argon2i_opslimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_opslimit_max"]
     pub fn crypto_pwhash_argon2i_opslimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_memlimit_min"]
     pub fn crypto_pwhash_argon2i_memlimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_memlimit_max"]
     pub fn crypto_pwhash_argon2i_memlimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_opslimit_interactive"]
     pub fn crypto_pwhash_argon2i_opslimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_memlimit_interactive"]
     pub fn crypto_pwhash_argon2i_memlimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_opslimit_moderate"]
     pub fn crypto_pwhash_argon2i_opslimit_moderate() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_memlimit_moderate"]
     pub fn crypto_pwhash_argon2i_memlimit_moderate() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_opslimit_sensitive"]
     pub fn crypto_pwhash_argon2i_opslimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_memlimit_sensitive"]
     pub fn crypto_pwhash_argon2i_memlimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i"]
     pub fn crypto_pwhash_argon2i(
         out: *mut ::std::os::raw::c_uchar,
         outlen: ::std::os::raw::c_ulonglong,
@@ -2230,7 +1964,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_str"]
     pub fn crypto_pwhash_argon2i_str(
         out: *mut ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -2240,7 +1973,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_str_verify"]
     pub fn crypto_pwhash_argon2i_str_verify(
         str: *const ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -2248,7 +1980,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2i_str_needs_rehash"]
     pub fn crypto_pwhash_argon2i_str_needs_rehash(
         str: *const ::std::os::raw::c_char,
         opslimit: ::std::os::raw::c_ulonglong,
@@ -2256,79 +1987,60 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_alg_argon2id13"]
     pub fn crypto_pwhash_argon2id_alg_argon2id13() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_bytes_min"]
     pub fn crypto_pwhash_argon2id_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_bytes_max"]
     pub fn crypto_pwhash_argon2id_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_passwd_min"]
     pub fn crypto_pwhash_argon2id_passwd_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_passwd_max"]
     pub fn crypto_pwhash_argon2id_passwd_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_saltbytes"]
     pub fn crypto_pwhash_argon2id_saltbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_strbytes"]
     pub fn crypto_pwhash_argon2id_strbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_strprefix"]
     pub fn crypto_pwhash_argon2id_strprefix() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_opslimit_min"]
     pub fn crypto_pwhash_argon2id_opslimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_opslimit_max"]
     pub fn crypto_pwhash_argon2id_opslimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_memlimit_min"]
     pub fn crypto_pwhash_argon2id_memlimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_memlimit_max"]
     pub fn crypto_pwhash_argon2id_memlimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_opslimit_interactive"]
     pub fn crypto_pwhash_argon2id_opslimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_memlimit_interactive"]
     pub fn crypto_pwhash_argon2id_memlimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_opslimit_moderate"]
     pub fn crypto_pwhash_argon2id_opslimit_moderate() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_memlimit_moderate"]
     pub fn crypto_pwhash_argon2id_memlimit_moderate() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_opslimit_sensitive"]
     pub fn crypto_pwhash_argon2id_opslimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_memlimit_sensitive"]
     pub fn crypto_pwhash_argon2id_memlimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id"]
     pub fn crypto_pwhash_argon2id(
         out: *mut ::std::os::raw::c_uchar,
         outlen: ::std::os::raw::c_ulonglong,
@@ -2341,7 +2053,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_str"]
     pub fn crypto_pwhash_argon2id_str(
         out: *mut ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -2351,7 +2062,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_str_verify"]
     pub fn crypto_pwhash_argon2id_str_verify(
         str: *const ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -2359,7 +2069,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_argon2id_str_needs_rehash"]
     pub fn crypto_pwhash_argon2id_str_needs_rehash(
         str: *const ::std::os::raw::c_char,
         opslimit: ::std::os::raw::c_ulonglong,
@@ -2367,87 +2076,66 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_alg_argon2i13"]
     pub fn crypto_pwhash_alg_argon2i13() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_alg_argon2id13"]
     pub fn crypto_pwhash_alg_argon2id13() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_alg_default"]
     pub fn crypto_pwhash_alg_default() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_bytes_min"]
     pub fn crypto_pwhash_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_bytes_max"]
     pub fn crypto_pwhash_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_passwd_min"]
     pub fn crypto_pwhash_passwd_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_passwd_max"]
     pub fn crypto_pwhash_passwd_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_saltbytes"]
     pub fn crypto_pwhash_saltbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_strbytes"]
     pub fn crypto_pwhash_strbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_strprefix"]
     pub fn crypto_pwhash_strprefix() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_opslimit_min"]
     pub fn crypto_pwhash_opslimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_opslimit_max"]
     pub fn crypto_pwhash_opslimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_memlimit_min"]
     pub fn crypto_pwhash_memlimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_memlimit_max"]
     pub fn crypto_pwhash_memlimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_opslimit_interactive"]
     pub fn crypto_pwhash_opslimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_memlimit_interactive"]
     pub fn crypto_pwhash_memlimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_opslimit_moderate"]
     pub fn crypto_pwhash_opslimit_moderate() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_memlimit_moderate"]
     pub fn crypto_pwhash_memlimit_moderate() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_opslimit_sensitive"]
     pub fn crypto_pwhash_opslimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_memlimit_sensitive"]
     pub fn crypto_pwhash_memlimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash"]
     pub fn crypto_pwhash(
         out: *mut ::std::os::raw::c_uchar,
         outlen: ::std::os::raw::c_ulonglong,
@@ -2460,7 +2148,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_str"]
     pub fn crypto_pwhash_str(
         out: *mut ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -2470,7 +2157,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_str_alg"]
     pub fn crypto_pwhash_str_alg(
         out: *mut ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -2481,7 +2167,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_str_verify"]
     pub fn crypto_pwhash_str_verify(
         str: *const ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -2489,7 +2174,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_str_needs_rehash"]
     pub fn crypto_pwhash_str_needs_rehash(
         str: *const ::std::os::raw::c_char,
         opslimit: ::std::os::raw::c_ulonglong,
@@ -2497,19 +2181,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_primitive"]
     pub fn crypto_pwhash_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_curve25519_bytes"]
     pub fn crypto_scalarmult_curve25519_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_curve25519_scalarbytes"]
     pub fn crypto_scalarmult_curve25519_scalarbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_curve25519"]
     pub fn crypto_scalarmult_curve25519(
         q: *mut ::std::os::raw::c_uchar,
         n: *const ::std::os::raw::c_uchar,
@@ -2517,30 +2197,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_curve25519_base"]
     pub fn crypto_scalarmult_curve25519_base(
         q: *mut ::std::os::raw::c_uchar,
         n: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_bytes"]
     pub fn crypto_scalarmult_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_scalarbytes"]
     pub fn crypto_scalarmult_scalarbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_primitive"]
     pub fn crypto_scalarmult_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_base"]
     pub fn crypto_scalarmult_base(q: *mut ::std::os::raw::c_uchar, n: *const ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult"]
     pub fn crypto_scalarmult(
         q: *mut ::std::os::raw::c_uchar,
         n: *const ::std::os::raw::c_uchar,
@@ -2548,23 +2222,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_keybytes"]
     pub fn crypto_secretbox_xsalsa20poly1305_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_noncebytes"]
     pub fn crypto_secretbox_xsalsa20poly1305_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_macbytes"]
     pub fn crypto_secretbox_xsalsa20poly1305_macbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_messagebytes_max"]
     pub fn crypto_secretbox_xsalsa20poly1305_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305"]
     pub fn crypto_secretbox_xsalsa20poly1305(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -2574,7 +2243,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_open"]
     pub fn crypto_secretbox_xsalsa20poly1305_open(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -2584,39 +2252,30 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_keygen"]
     pub fn crypto_secretbox_xsalsa20poly1305_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_boxzerobytes"]
     pub fn crypto_secretbox_xsalsa20poly1305_boxzerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xsalsa20poly1305_zerobytes"]
     pub fn crypto_secretbox_xsalsa20poly1305_zerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_keybytes"]
     pub fn crypto_secretbox_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_noncebytes"]
     pub fn crypto_secretbox_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_macbytes"]
     pub fn crypto_secretbox_macbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_primitive"]
     pub fn crypto_secretbox_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_messagebytes_max"]
     pub fn crypto_secretbox_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_easy"]
     pub fn crypto_secretbox_easy(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -2626,7 +2285,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_open_easy"]
     pub fn crypto_secretbox_open_easy(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -2636,7 +2294,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_detached"]
     pub fn crypto_secretbox_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -2647,7 +2304,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_open_detached"]
     pub fn crypto_secretbox_open_detached(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -2658,19 +2314,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_keygen"]
     pub fn crypto_secretbox_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_zerobytes"]
     pub fn crypto_secretbox_zerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_boxzerobytes"]
     pub fn crypto_secretbox_boxzerobytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox"]
     pub fn crypto_secretbox(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -2680,7 +2332,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_open"]
     pub fn crypto_secretbox_open(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -2690,19 +2341,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_keybytes"]
     pub fn crypto_stream_chacha20_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_noncebytes"]
     pub fn crypto_stream_chacha20_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_messagebytes_max"]
     pub fn crypto_stream_chacha20_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20"]
     pub fn crypto_stream_chacha20(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -2711,7 +2358,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_xor"]
     pub fn crypto_stream_chacha20_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -2721,7 +2367,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_xor_ic"]
     pub fn crypto_stream_chacha20_xor_ic(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -2732,23 +2377,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_keygen"]
     pub fn crypto_stream_chacha20_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_ietf_keybytes"]
     pub fn crypto_stream_chacha20_ietf_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_ietf_noncebytes"]
     pub fn crypto_stream_chacha20_ietf_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_ietf_messagebytes_max"]
     pub fn crypto_stream_chacha20_ietf_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_ietf"]
     pub fn crypto_stream_chacha20_ietf(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -2757,7 +2397,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_ietf_xor"]
     pub fn crypto_stream_chacha20_ietf_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -2767,7 +2406,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_ietf_xor_ic"]
     pub fn crypto_stream_chacha20_ietf_xor_ic(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -2778,39 +2416,30 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_chacha20_ietf_keygen"]
     pub fn crypto_stream_chacha20_ietf_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_abytes"]
     pub fn crypto_secretstream_xchacha20poly1305_abytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_headerbytes"]
     pub fn crypto_secretstream_xchacha20poly1305_headerbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_keybytes"]
     pub fn crypto_secretstream_xchacha20poly1305_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_messagebytes_max"]
     pub fn crypto_secretstream_xchacha20poly1305_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_tag_message"]
     pub fn crypto_secretstream_xchacha20poly1305_tag_message() -> ::std::os::raw::c_uchar;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_tag_push"]
     pub fn crypto_secretstream_xchacha20poly1305_tag_push() -> ::std::os::raw::c_uchar;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_tag_rekey"]
     pub fn crypto_secretstream_xchacha20poly1305_tag_rekey() -> ::std::os::raw::c_uchar;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_tag_final"]
     pub fn crypto_secretstream_xchacha20poly1305_tag_final() -> ::std::os::raw::c_uchar;
 }
 #[repr(C)]
@@ -2879,15 +2508,12 @@ fn bindgen_test_layout_crypto_secretstream_xchacha20poly1305_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_statebytes"]
     pub fn crypto_secretstream_xchacha20poly1305_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_keygen"]
     pub fn crypto_secretstream_xchacha20poly1305_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_init_push"]
     pub fn crypto_secretstream_xchacha20poly1305_init_push(
         state: *mut crypto_secretstream_xchacha20poly1305_state,
         header: *mut ::std::os::raw::c_uchar,
@@ -2895,7 +2521,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_push"]
     pub fn crypto_secretstream_xchacha20poly1305_push(
         state: *mut crypto_secretstream_xchacha20poly1305_state,
         c: *mut ::std::os::raw::c_uchar,
@@ -2908,7 +2533,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_init_pull"]
     pub fn crypto_secretstream_xchacha20poly1305_init_pull(
         state: *mut crypto_secretstream_xchacha20poly1305_state,
         header: *const ::std::os::raw::c_uchar,
@@ -2916,7 +2540,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_pull"]
     pub fn crypto_secretstream_xchacha20poly1305_pull(
         state: *mut crypto_secretstream_xchacha20poly1305_state,
         m: *mut ::std::os::raw::c_uchar,
@@ -2929,21 +2552,17 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretstream_xchacha20poly1305_rekey"]
     pub fn crypto_secretstream_xchacha20poly1305_rekey(
         state: *mut crypto_secretstream_xchacha20poly1305_state,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_siphash24_bytes"]
     pub fn crypto_shorthash_siphash24_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_siphash24_keybytes"]
     pub fn crypto_shorthash_siphash24_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_siphash24"]
     pub fn crypto_shorthash_siphash24(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -2952,15 +2571,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_siphashx24_bytes"]
     pub fn crypto_shorthash_siphashx24_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_siphashx24_keybytes"]
     pub fn crypto_shorthash_siphashx24_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_siphashx24"]
     pub fn crypto_shorthash_siphashx24(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -2969,19 +2585,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_bytes"]
     pub fn crypto_shorthash_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_keybytes"]
     pub fn crypto_shorthash_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_primitive"]
     pub fn crypto_shorthash_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash"]
     pub fn crypto_shorthash(
         out: *mut ::std::os::raw::c_uchar,
         in_: *const ::std::os::raw::c_uchar,
@@ -2990,7 +2602,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_shorthash_keygen"]
     pub fn crypto_shorthash_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 #[repr(C)]
@@ -3022,31 +2633,24 @@ fn bindgen_test_layout_crypto_sign_ed25519ph_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519ph_statebytes"]
     pub fn crypto_sign_ed25519ph_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_bytes"]
     pub fn crypto_sign_ed25519_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_seedbytes"]
     pub fn crypto_sign_ed25519_seedbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_publickeybytes"]
     pub fn crypto_sign_ed25519_publickeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_secretkeybytes"]
     pub fn crypto_sign_ed25519_secretkeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_messagebytes_max"]
     pub fn crypto_sign_ed25519_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519"]
     pub fn crypto_sign_ed25519(
         sm: *mut ::std::os::raw::c_uchar,
         smlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -3056,7 +2660,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_open"]
     pub fn crypto_sign_ed25519_open(
         m: *mut ::std::os::raw::c_uchar,
         mlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -3066,7 +2669,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_detached"]
     pub fn crypto_sign_ed25519_detached(
         sig: *mut ::std::os::raw::c_uchar,
         siglen_p: *mut ::std::os::raw::c_ulonglong,
@@ -3076,7 +2678,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_verify_detached"]
     pub fn crypto_sign_ed25519_verify_detached(
         sig: *const ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3085,14 +2686,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_keypair"]
     pub fn crypto_sign_ed25519_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_seed_keypair"]
     pub fn crypto_sign_ed25519_seed_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
@@ -3100,39 +2699,33 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_pk_to_curve25519"]
     pub fn crypto_sign_ed25519_pk_to_curve25519(
         curve25519_pk: *mut ::std::os::raw::c_uchar,
         ed25519_pk: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_sk_to_curve25519"]
     pub fn crypto_sign_ed25519_sk_to_curve25519(
         curve25519_sk: *mut ::std::os::raw::c_uchar,
         ed25519_sk: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_sk_to_seed"]
     pub fn crypto_sign_ed25519_sk_to_seed(
         seed: *mut ::std::os::raw::c_uchar,
         sk: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519_sk_to_pk"]
     pub fn crypto_sign_ed25519_sk_to_pk(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519ph_init"]
     pub fn crypto_sign_ed25519ph_init(state: *mut crypto_sign_ed25519ph_state) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519ph_update"]
     pub fn crypto_sign_ed25519ph_update(
         state: *mut crypto_sign_ed25519ph_state,
         m: *const ::std::os::raw::c_uchar,
@@ -3140,7 +2733,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519ph_final_create"]
     pub fn crypto_sign_ed25519ph_final_create(
         state: *mut crypto_sign_ed25519ph_state,
         sig: *mut ::std::os::raw::c_uchar,
@@ -3149,7 +2741,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_ed25519ph_final_verify"]
     pub fn crypto_sign_ed25519ph_final_verify(
         state: *mut crypto_sign_ed25519ph_state,
         sig: *const ::std::os::raw::c_uchar,
@@ -3158,35 +2749,27 @@ extern "C" {
 }
 pub type crypto_sign_state = crypto_sign_ed25519ph_state;
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_statebytes"]
     pub fn crypto_sign_statebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_bytes"]
     pub fn crypto_sign_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_seedbytes"]
     pub fn crypto_sign_seedbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_publickeybytes"]
     pub fn crypto_sign_publickeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_secretkeybytes"]
     pub fn crypto_sign_secretkeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_messagebytes_max"]
     pub fn crypto_sign_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_primitive"]
     pub fn crypto_sign_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_seed_keypair"]
     pub fn crypto_sign_seed_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
@@ -3194,11 +2777,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_keypair"]
     pub fn crypto_sign_keypair(pk: *mut ::std::os::raw::c_uchar, sk: *mut ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign"]
     pub fn crypto_sign(
         sm: *mut ::std::os::raw::c_uchar,
         smlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -3208,7 +2789,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_open"]
     pub fn crypto_sign_open(
         m: *mut ::std::os::raw::c_uchar,
         mlen_p: *mut ::std::os::raw::c_ulonglong,
@@ -3218,7 +2798,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_detached"]
     pub fn crypto_sign_detached(
         sig: *mut ::std::os::raw::c_uchar,
         siglen_p: *mut ::std::os::raw::c_ulonglong,
@@ -3228,7 +2807,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_verify_detached"]
     pub fn crypto_sign_verify_detached(
         sig: *const ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3237,11 +2815,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_init"]
     pub fn crypto_sign_init(state: *mut crypto_sign_state) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_update"]
     pub fn crypto_sign_update(
         state: *mut crypto_sign_state,
         m: *const ::std::os::raw::c_uchar,
@@ -3249,7 +2825,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_final_create"]
     pub fn crypto_sign_final_create(
         state: *mut crypto_sign_state,
         sig: *mut ::std::os::raw::c_uchar,
@@ -3258,7 +2833,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_sign_final_verify"]
     pub fn crypto_sign_final_verify(
         state: *mut crypto_sign_state,
         sig: *const ::std::os::raw::c_uchar,
@@ -3266,23 +2840,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_keybytes"]
     pub fn crypto_stream_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_noncebytes"]
     pub fn crypto_stream_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_messagebytes_max"]
     pub fn crypto_stream_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_primitive"]
     pub fn crypto_stream_primitive() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream"]
     pub fn crypto_stream(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -3291,7 +2860,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xor"]
     pub fn crypto_stream_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3301,23 +2869,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_keygen"]
     pub fn crypto_stream_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa20_keybytes"]
     pub fn crypto_stream_salsa20_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa20_noncebytes"]
     pub fn crypto_stream_salsa20_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa20_messagebytes_max"]
     pub fn crypto_stream_salsa20_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa20"]
     pub fn crypto_stream_salsa20(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -3326,7 +2889,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa20_xor"]
     pub fn crypto_stream_salsa20_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3336,7 +2898,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa20_xor_ic"]
     pub fn crypto_stream_salsa20_xor_ic(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3347,31 +2908,24 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa20_keygen"]
     pub fn crypto_stream_salsa20_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_verify_16_bytes"]
     pub fn crypto_verify_16_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_verify_16"]
     pub fn crypto_verify_16(x: *const ::std::os::raw::c_uchar, y: *const ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_verify_32_bytes"]
     pub fn crypto_verify_32_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_verify_32"]
     pub fn crypto_verify_32(x: *const ::std::os::raw::c_uchar, y: *const ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_verify_64_bytes"]
     pub fn crypto_verify_64_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_verify_64"]
     pub fn crypto_verify_64(x: *const ::std::os::raw::c_uchar, y: *const ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 #[repr(C)]
@@ -3469,15 +3023,12 @@ fn bindgen_test_layout_randombytes_implementation() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_seedbytes"]
     pub fn randombytes_seedbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_buf"]
     pub fn randombytes_buf(buf: *mut ::std::os::raw::c_void, size: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_buf_deterministic"]
     pub fn randombytes_buf_deterministic(
         buf: *mut ::std::os::raw::c_void,
         size: usize,
@@ -3485,91 +3036,71 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_random"]
     pub fn randombytes_random() -> u32;
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_uniform"]
     pub fn randombytes_uniform(upper_bound: u32) -> u32;
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_stir"]
     pub fn randombytes_stir();
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_close"]
     pub fn randombytes_close() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_set_implementation"]
     pub fn randombytes_set_implementation(impl_: *mut randombytes_implementation) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_implementation_name"]
     pub fn randombytes_implementation_name() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_salsa20_implementation"]
+    #[link_name = "\u{1}randombytes_salsa20_implementation"]
     pub static mut randombytes_salsa20_implementation: randombytes_implementation;
 }
 extern "C" {
-    #[link_name = "\u{1}_randombytes_sysrandom_implementation"]
+    #[link_name = "\u{1}randombytes_sysrandom_implementation"]
     pub static mut randombytes_sysrandom_implementation: randombytes_implementation;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_neon"]
     pub fn sodium_runtime_has_neon() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_sse2"]
     pub fn sodium_runtime_has_sse2() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_sse3"]
     pub fn sodium_runtime_has_sse3() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_ssse3"]
     pub fn sodium_runtime_has_ssse3() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_sse41"]
     pub fn sodium_runtime_has_sse41() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_avx"]
     pub fn sodium_runtime_has_avx() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_avx2"]
     pub fn sodium_runtime_has_avx2() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_avx512f"]
     pub fn sodium_runtime_has_avx512f() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_pclmul"]
     pub fn sodium_runtime_has_pclmul() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_aesni"]
     pub fn sodium_runtime_has_aesni() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_runtime_has_rdrand"]
     pub fn sodium_runtime_has_rdrand() -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_memzero"]
     pub fn sodium_memzero(pnt: *mut ::std::os::raw::c_void, len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_stackzero"]
     pub fn sodium_stackzero(len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_memcmp"]
     pub fn sodium_memcmp(
         b1_: *const ::std::os::raw::c_void,
         b2_: *const ::std::os::raw::c_void,
@@ -3577,7 +3108,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_compare"]
     pub fn sodium_compare(
         b1_: *const ::std::os::raw::c_uchar,
         b2_: *const ::std::os::raw::c_uchar,
@@ -3585,23 +3115,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_is_zero"]
     pub fn sodium_is_zero(n: *const ::std::os::raw::c_uchar, nlen: usize) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_increment"]
     pub fn sodium_increment(n: *mut ::std::os::raw::c_uchar, nlen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_add"]
     pub fn sodium_add(a: *mut ::std::os::raw::c_uchar, b: *const ::std::os::raw::c_uchar, len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_sub"]
     pub fn sodium_sub(a: *mut ::std::os::raw::c_uchar, b: *const ::std::os::raw::c_uchar, len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_bin2hex"]
     pub fn sodium_bin2hex(
         hex: *mut ::std::os::raw::c_char,
         hex_maxlen: usize,
@@ -3610,7 +3135,6 @@ extern "C" {
     ) -> *mut ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_hex2bin"]
     pub fn sodium_hex2bin(
         bin: *mut ::std::os::raw::c_uchar,
         bin_maxlen: usize,
@@ -3622,11 +3146,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_base64_encoded_len"]
     pub fn sodium_base64_encoded_len(bin_len: usize, variant: ::std::os::raw::c_int) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_bin2base64"]
     pub fn sodium_bin2base64(
         b64: *mut ::std::os::raw::c_char,
         b64_maxlen: usize,
@@ -3636,7 +3158,6 @@ extern "C" {
     ) -> *mut ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_base642bin"]
     pub fn sodium_base642bin(
         bin: *mut ::std::os::raw::c_uchar,
         bin_maxlen: usize,
@@ -3649,39 +3170,30 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_mlock"]
     pub fn sodium_mlock(addr: *mut ::std::os::raw::c_void, len: usize) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_munlock"]
     pub fn sodium_munlock(addr: *mut ::std::os::raw::c_void, len: usize) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_malloc"]
     pub fn sodium_malloc(size: usize) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_allocarray"]
     pub fn sodium_allocarray(count: usize, size: usize) -> *mut ::std::os::raw::c_void;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_free"]
     pub fn sodium_free(ptr: *mut ::std::os::raw::c_void);
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_mprotect_noaccess"]
     pub fn sodium_mprotect_noaccess(ptr: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_mprotect_readonly"]
     pub fn sodium_mprotect_readonly(ptr: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_mprotect_readwrite"]
     pub fn sodium_mprotect_readwrite(ptr: *mut ::std::os::raw::c_void) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_pad"]
     pub fn sodium_pad(
         padded_buflen_p: *mut usize,
         buf: *mut ::std::os::raw::c_uchar,
@@ -3691,7 +3203,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_sodium_unpad"]
     pub fn sodium_unpad(
         unpadded_buflen_p: *mut usize,
         buf: *const ::std::os::raw::c_uchar,
@@ -3700,19 +3211,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xchacha20_keybytes"]
     pub fn crypto_stream_xchacha20_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xchacha20_noncebytes"]
     pub fn crypto_stream_xchacha20_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xchacha20_messagebytes_max"]
     pub fn crypto_stream_xchacha20_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xchacha20"]
     pub fn crypto_stream_xchacha20(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -3721,7 +3228,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xchacha20_xor"]
     pub fn crypto_stream_xchacha20_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3731,7 +3237,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xchacha20_xor_ic"]
     pub fn crypto_stream_xchacha20_xor_ic(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3742,39 +3247,30 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_xchacha20_keygen"]
     pub fn crypto_stream_xchacha20_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_seedbytes"]
     pub fn crypto_box_curve25519xchacha20poly1305_seedbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_publickeybytes"]
     pub fn crypto_box_curve25519xchacha20poly1305_publickeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_secretkeybytes"]
     pub fn crypto_box_curve25519xchacha20poly1305_secretkeybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_beforenmbytes"]
     pub fn crypto_box_curve25519xchacha20poly1305_beforenmbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_noncebytes"]
     pub fn crypto_box_curve25519xchacha20poly1305_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_macbytes"]
     pub fn crypto_box_curve25519xchacha20poly1305_macbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_messagebytes_max"]
     pub fn crypto_box_curve25519xchacha20poly1305_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_seed_keypair"]
     pub fn crypto_box_curve25519xchacha20poly1305_seed_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
@@ -3782,14 +3278,12 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_keypair"]
     pub fn crypto_box_curve25519xchacha20poly1305_keypair(
         pk: *mut ::std::os::raw::c_uchar,
         sk: *mut ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_easy"]
     pub fn crypto_box_curve25519xchacha20poly1305_easy(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3800,7 +3294,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_open_easy"]
     pub fn crypto_box_curve25519xchacha20poly1305_open_easy(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -3811,7 +3304,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_detached"]
     pub fn crypto_box_curve25519xchacha20poly1305_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -3823,7 +3315,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_open_detached"]
     pub fn crypto_box_curve25519xchacha20poly1305_open_detached(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -3835,7 +3326,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_beforenm"]
     pub fn crypto_box_curve25519xchacha20poly1305_beforenm(
         k: *mut ::std::os::raw::c_uchar,
         pk: *const ::std::os::raw::c_uchar,
@@ -3843,7 +3333,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_easy_afternm"]
     pub fn crypto_box_curve25519xchacha20poly1305_easy_afternm(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3853,7 +3342,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_open_easy_afternm"]
     pub fn crypto_box_curve25519xchacha20poly1305_open_easy_afternm(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -3863,7 +3351,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_detached_afternm"]
     pub fn crypto_box_curve25519xchacha20poly1305_detached_afternm(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -3874,7 +3361,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_open_detached_afternm"]
     pub fn crypto_box_curve25519xchacha20poly1305_open_detached_afternm(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -3885,11 +3371,9 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_sealbytes"]
     pub fn crypto_box_curve25519xchacha20poly1305_sealbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_seal"]
     pub fn crypto_box_curve25519xchacha20poly1305_seal(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -3898,7 +3382,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_box_curve25519xchacha20poly1305_seal_open"]
     pub fn crypto_box_curve25519xchacha20poly1305_seal_open(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -3908,27 +3391,21 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_bytes"]
     pub fn crypto_core_ed25519_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_uniformbytes"]
     pub fn crypto_core_ed25519_uniformbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalarbytes"]
     pub fn crypto_core_ed25519_scalarbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_nonreducedscalarbytes"]
     pub fn crypto_core_ed25519_nonreducedscalarbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_is_valid_point"]
     pub fn crypto_core_ed25519_is_valid_point(p: *const ::std::os::raw::c_uchar) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_add"]
     pub fn crypto_core_ed25519_add(
         r: *mut ::std::os::raw::c_uchar,
         p: *const ::std::os::raw::c_uchar,
@@ -3936,7 +3413,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_sub"]
     pub fn crypto_core_ed25519_sub(
         r: *mut ::std::os::raw::c_uchar,
         p: *const ::std::os::raw::c_uchar,
@@ -3944,33 +3420,27 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_from_uniform"]
     pub fn crypto_core_ed25519_from_uniform(
         p: *mut ::std::os::raw::c_uchar,
         r: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalar_random"]
     pub fn crypto_core_ed25519_scalar_random(r: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalar_invert"]
     pub fn crypto_core_ed25519_scalar_invert(
         recip: *mut ::std::os::raw::c_uchar,
         s: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalar_negate"]
     pub fn crypto_core_ed25519_scalar_negate(neg: *mut ::std::os::raw::c_uchar, s: *const ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalar_complement"]
     pub fn crypto_core_ed25519_scalar_complement(comp: *mut ::std::os::raw::c_uchar, s: *const ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalar_add"]
     pub fn crypto_core_ed25519_scalar_add(
         z: *mut ::std::os::raw::c_uchar,
         x: *const ::std::os::raw::c_uchar,
@@ -3978,7 +3448,6 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalar_sub"]
     pub fn crypto_core_ed25519_scalar_sub(
         z: *mut ::std::os::raw::c_uchar,
         x: *const ::std::os::raw::c_uchar,
@@ -3986,19 +3455,15 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_core_ed25519_scalar_reduce"]
     pub fn crypto_core_ed25519_scalar_reduce(r: *mut ::std::os::raw::c_uchar, s: *const ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_ed25519_bytes"]
     pub fn crypto_scalarmult_ed25519_bytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_ed25519_scalarbytes"]
     pub fn crypto_scalarmult_ed25519_scalarbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_ed25519"]
     pub fn crypto_scalarmult_ed25519(
         q: *mut ::std::os::raw::c_uchar,
         n: *const ::std::os::raw::c_uchar,
@@ -4006,7 +3471,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_ed25519_noclamp"]
     pub fn crypto_scalarmult_ed25519_noclamp(
         q: *mut ::std::os::raw::c_uchar,
         n: *const ::std::os::raw::c_uchar,
@@ -4014,37 +3478,30 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_ed25519_base"]
     pub fn crypto_scalarmult_ed25519_base(
         q: *mut ::std::os::raw::c_uchar,
         n: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_scalarmult_ed25519_base_noclamp"]
     pub fn crypto_scalarmult_ed25519_base_noclamp(
         q: *mut ::std::os::raw::c_uchar,
         n: *const ::std::os::raw::c_uchar,
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_keybytes"]
     pub fn crypto_secretbox_xchacha20poly1305_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_noncebytes"]
     pub fn crypto_secretbox_xchacha20poly1305_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_macbytes"]
     pub fn crypto_secretbox_xchacha20poly1305_macbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_messagebytes_max"]
     pub fn crypto_secretbox_xchacha20poly1305_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_easy"]
     pub fn crypto_secretbox_xchacha20poly1305_easy(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -4054,7 +3511,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_open_easy"]
     pub fn crypto_secretbox_xchacha20poly1305_open_easy(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -4064,7 +3520,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_detached"]
     pub fn crypto_secretbox_xchacha20poly1305_detached(
         c: *mut ::std::os::raw::c_uchar,
         mac: *mut ::std::os::raw::c_uchar,
@@ -4075,7 +3530,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_secretbox_xchacha20poly1305_open_detached"]
     pub fn crypto_secretbox_xchacha20poly1305_open_detached(
         m: *mut ::std::os::raw::c_uchar,
         c: *const ::std::os::raw::c_uchar,
@@ -4086,67 +3540,51 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_bytes_min"]
     pub fn crypto_pwhash_scryptsalsa208sha256_bytes_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_bytes_max"]
     pub fn crypto_pwhash_scryptsalsa208sha256_bytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_passwd_min"]
     pub fn crypto_pwhash_scryptsalsa208sha256_passwd_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_passwd_max"]
     pub fn crypto_pwhash_scryptsalsa208sha256_passwd_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_saltbytes"]
     pub fn crypto_pwhash_scryptsalsa208sha256_saltbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_strbytes"]
     pub fn crypto_pwhash_scryptsalsa208sha256_strbytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_strprefix"]
     pub fn crypto_pwhash_scryptsalsa208sha256_strprefix() -> *const ::std::os::raw::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_opslimit_min"]
     pub fn crypto_pwhash_scryptsalsa208sha256_opslimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_opslimit_max"]
     pub fn crypto_pwhash_scryptsalsa208sha256_opslimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_memlimit_min"]
     pub fn crypto_pwhash_scryptsalsa208sha256_memlimit_min() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_memlimit_max"]
     pub fn crypto_pwhash_scryptsalsa208sha256_memlimit_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_opslimit_interactive"]
     pub fn crypto_pwhash_scryptsalsa208sha256_opslimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_memlimit_interactive"]
     pub fn crypto_pwhash_scryptsalsa208sha256_memlimit_interactive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_opslimit_sensitive"]
     pub fn crypto_pwhash_scryptsalsa208sha256_opslimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_memlimit_sensitive"]
     pub fn crypto_pwhash_scryptsalsa208sha256_memlimit_sensitive() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256"]
     pub fn crypto_pwhash_scryptsalsa208sha256(
         out: *mut ::std::os::raw::c_uchar,
         outlen: ::std::os::raw::c_ulonglong,
@@ -4158,7 +3596,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_str"]
     pub fn crypto_pwhash_scryptsalsa208sha256_str(
         out: *mut ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -4168,7 +3605,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_str_verify"]
     pub fn crypto_pwhash_scryptsalsa208sha256_str_verify(
         str: *const ::std::os::raw::c_char,
         passwd: *const ::std::os::raw::c_char,
@@ -4176,7 +3612,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_ll"]
     pub fn crypto_pwhash_scryptsalsa208sha256_ll(
         passwd: *const u8,
         passwdlen: usize,
@@ -4190,7 +3625,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_pwhash_scryptsalsa208sha256_str_needs_rehash"]
     pub fn crypto_pwhash_scryptsalsa208sha256_str_needs_rehash(
         str: *const ::std::os::raw::c_char,
         opslimit: ::std::os::raw::c_ulonglong,
@@ -4198,19 +3632,15 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa2012_keybytes"]
     pub fn crypto_stream_salsa2012_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa2012_noncebytes"]
     pub fn crypto_stream_salsa2012_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa2012_messagebytes_max"]
     pub fn crypto_stream_salsa2012_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa2012"]
     pub fn crypto_stream_salsa2012(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -4219,7 +3649,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa2012_xor"]
     pub fn crypto_stream_salsa2012_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -4229,23 +3658,18 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa2012_keygen"]
     pub fn crypto_stream_salsa2012_keygen(k: *mut ::std::os::raw::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa208_keybytes"]
     pub fn crypto_stream_salsa208_keybytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa208_noncebytes"]
     pub fn crypto_stream_salsa208_noncebytes() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa208_messagebytes_max"]
     pub fn crypto_stream_salsa208_messagebytes_max() -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa208"]
     pub fn crypto_stream_salsa208(
         c: *mut ::std::os::raw::c_uchar,
         clen: ::std::os::raw::c_ulonglong,
@@ -4254,7 +3678,6 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa208_xor"]
     pub fn crypto_stream_salsa208_xor(
         c: *mut ::std::os::raw::c_uchar,
         m: *const ::std::os::raw::c_uchar,
@@ -4264,6 +3687,5 @@ extern "C" {
     ) -> ::std::os::raw::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}_crypto_stream_salsa208_keygen"]
     pub fn crypto_stream_salsa208_keygen(k: *mut ::std::os::raw::c_uchar);
 }
