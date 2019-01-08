@@ -1,6 +1,6 @@
 extern crate pkg_config;
 
-const LIBSODIUM_VERSION: &str = "1.0.16";
+const LIBSODIUM_VERSION: &str = "1.0.17";
 
 fn main() {
 	// Link libsodium
