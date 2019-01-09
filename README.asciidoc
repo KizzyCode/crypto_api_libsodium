@@ -20,7 +20,7 @@ The following `crypto_api`/libsodium primitives are covered:
 
 ==== Normal Ciphers
  * [x] https://tools.ietf.org/html/rfc7539[ChaCha20 (IETF-version)]
- * [ ] https://en.wikipedia.org/wiki/Salsa20=XChaCha[XChaCha20]
+ * [ ] https://en.wikipedia.org/wiki/Salsa20#XChaCha[XChaCha20]
 
 ==== AEAD Ciphers
  * [x] https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf[AES-256-GCM]
@@ -28,7 +28,7 @@ The following `crypto_api`/libsodium primitives are covered:
 
 ==== Streaming API
  * [ ] https://tools.ietf.org/html/rfc7539[ChaCha20 (IETF-version)]
- * [ ] https://en.wikipedia.org/wiki/Salsa20=XChaCha[XChaCha20]
+ * [ ] https://en.wikipedia.org/wiki/Salsa20#XChaCha[XChaCha20]
 
 
 === Hashes
