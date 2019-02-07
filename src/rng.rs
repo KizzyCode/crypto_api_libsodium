@@ -1,5 +1,5 @@
-use crate::{ LibsodiumError, sodium_bindings::{ sodium_init, randombytes_buf } };
-use std::{ ptr, error::Error, os::raw::{ c_uchar, c_int, c_ulonglong } };
+use crate::sodium_bindings::{ sodium_init, randombytes_buf };
+use std::error::Error;
 use crypto_api::rng::Rng;
 
 
