@@ -1,8 +1,13 @@
-use crate::{ LibsodiumError, sodium_bindings::* };
-use ::{
-	crypto_api::cipher::{ CipherInfo, Cipher, AeadCipher },
-	std::{ ptr, os::raw::*, error::Error }
+use crate::{
+	LibsodiumError,
+	sodium_bindings::{
+		sodium_init, crypto_stream_chacha20_ietf_xor,
+		crypto_aead_aes256gcm_encrypt, crypto_aead_aes256gcm_decrypt,
+		crypto_aead_chacha20poly1305_ietf_encrypt, crypto_aead_chacha20poly1305_ietf_decrypt
+	}
 };
+use std::{ ptr, error::Error, os::raw::{ c_uchar, c_int, c_ulonglong } };
+use crypto_api::cipher::{ CipherInfo, Cipher, AeadCipher };
 
 
 /// An AEAD implementation
@@ -57,20 +62,20 @@ impl Cipher for Aead {
 	
 	
 	fn encrypt(&self, buf: &mut[u8], plaintext_len: usize, key: &[u8], nonce: &[u8])
-		-> Result<usize, Box<Error>>
+		-> Result<usize, Box<dyn Error>>
 	{
 		self.seal(buf, plaintext_len, &[], key, nonce)
 	}
 	
 	fn decrypt(&self, buf: &mut[u8], ciphertext_len: usize, key: &[u8], nonce: &[u8])
-		-> Result<usize, Box<Error>>
+		-> Result<usize, Box<dyn Error>>
 	{
 		self.open(buf, ciphertext_len, &[], key, nonce)
 	}
 }
 impl AeadCipher for Aead {
 	fn seal(&self, buf: &mut[u8], plaintext_len: usize, ad: &[u8], key: &[u8], nonce: &[u8])
-		-> Result<usize, Box<Error>>
+		-> Result<usize, Box<dyn Error>>
 	{
 		// Check variables
 		let info = self.info();
@@ -91,7 +96,7 @@ impl AeadCipher for Aead {
 	}
 	
 	fn open(&self, buf: &mut[u8], ciphertext_len: usize, ad: &[u8], key: &[u8], nonce: &[u8])
-		-> Result<usize, Box<Error>>
+		-> Result<usize, Box<dyn Error>>
 	{
 		// Check variables
 		let info = self.info();
@@ -132,7 +137,7 @@ impl Cipher for Xor {
 	
 	
 	fn encrypt(&self, buf: &mut[u8], plaintext_len: usize, key: &[u8], nonce: &[u8])
-		-> Result<usize, Box<Error>>
+		-> Result<usize, Box<dyn Error>>
 	{
 		// Check variables
 		let info = self.info();
@@ -152,7 +157,7 @@ impl Cipher for Xor {
 	}
 	
 	fn decrypt(&self, buf: &mut[u8], ciphertext_len: usize, key: &[u8], nonce: &[u8])
-		-> Result<usize, Box<Error>>
+		-> Result<usize, Box<dyn Error>>
 	{
 		self.encrypt(buf, ciphertext_len, key, nonce)
 	}
