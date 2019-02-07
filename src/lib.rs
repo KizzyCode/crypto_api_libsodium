@@ -20,6 +20,7 @@
 // Mods
 mod sodium_bindings;
 pub mod cipher;
+pub mod rng;
 
 
 // Uses and reexports

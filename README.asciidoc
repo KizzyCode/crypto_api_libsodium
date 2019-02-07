@@ -75,3 +75,10 @@ The following `crypto_api` / https://github.com/jedisct1/libsodium[libsodium]s p
 ==== Memory-Hard PBKDFs
  * [ ] https://www.cryptolux.org/images/0/0d/Argon2.pdf[Argon2i v1.3]
  * [ ] https://www.cryptolux.org/images/0/0d/Argon2.pdf[Argon2id v1.3]
+
+
+=== RNGs
+
+==== Cryptographically Secure RNGs
+ * [x] The operating system's cryptographically secure RNG
+ * [ ] A deterministic cryptographically secure RNG
