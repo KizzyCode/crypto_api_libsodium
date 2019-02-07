@@ -13,7 +13,7 @@ https://github.com/jedisct1/libsodium[libsodium] as backend.
 
 
 == Implemented Primitives
-The following `crypto_api`/https://github.com/jedisct1/libsodium[libsodium]s primitives are covered:
+The following `crypto_api` / https://github.com/jedisct1/libsodium[libsodium]s primitives are covered:
 
 
 === Ciphers
