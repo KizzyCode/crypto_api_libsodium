@@ -25,7 +25,7 @@ use std::{
 use crypto_api::pbkdf::{ Pbkdf, MemoryHardPbkdf, PbkdfInfo, MemoryHardPbkdfInfo };
 
 
-/// The default parallelism used (because the exposed API always uses `1` :( )
+/// The default parallelism used (because the exposed API always uses `1` 😫)
 const PARALLELISM: u64 = 1;
 
 
