@@ -1,13 +1,19 @@
 use crate::{
-	LibsodiumError,
+	LibsodiumError, SystemRng,
 	sodium_bindings::{
 		sodium_init, crypto_stream_chacha20_ietf_xor,
 		crypto_aead_aes256gcm_encrypt, crypto_aead_aes256gcm_decrypt,
 		crypto_aead_chacha20poly1305_ietf_encrypt, crypto_aead_chacha20poly1305_ietf_decrypt
 	}
 };
-use std::{ ptr, error::Error, os::raw::{ c_uchar, c_int, c_ulonglong } };
-use crypto_api::cipher::{ CipherInfo, Cipher, AeadCipher };
+use std::{
+	ptr, error::Error,
+	os::raw::{ c_uchar, c_int, c_ulonglong }
+};
+use crypto_api::{
+	rng::{ Rng, SecKeyGen },
+	cipher::{ CipherInfo, Cipher, AeadCipher }
+};
 
 
 /// An AEAD implementation
@@ -27,19 +33,6 @@ struct Aead {
 		npub: *const c_uchar, k: *const c_uchar,
 	) -> c_int
 }
-/// A XOR stream cipher implementation
-struct Xor {
-	pub cipher: Ciphers,
-	pub xor: unsafe extern "C" fn(
-		c: *mut c_uchar,
-		m: *const c_uchar,
-		mlen: c_ulonglong,
-		n: *const c_uchar,
-		k: *const c_uchar,
-	) -> c_int
-}
-
-
 impl Cipher for Aead {
 	fn info(&self) -> CipherInfo {
 		match self.cipher {
@@ -77,7 +70,7 @@ impl AeadCipher for Aead {
 	fn seal(&self, buf: &mut[u8], plaintext_len: usize, ad: &[u8], key: &[u8], nonce: &[u8])
 		-> Result<usize, Box<dyn Error>>
 	{
-		// Check variables
+		// Check parameters
 		let info = self.info();
 		check!(
 			buf.len() >= self.encrypted_len_max(plaintext_len),
@@ -98,7 +91,7 @@ impl AeadCipher for Aead {
 	fn open(&self, buf: &mut[u8], ciphertext_len: usize, ad: &[u8], key: &[u8], nonce: &[u8])
 		-> Result<usize, Box<dyn Error>>
 	{
-		// Check variables
+		// Check parameters
 		let info = self.info();
 		check!(
 			buf.len() >= ciphertext_len,
@@ -117,8 +110,31 @@ impl AeadCipher for Aead {
 		Ok(ciphertext_len - info.aead_tag_len.unwrap())
 	}
 }
+impl SecKeyGen for Aead {
+	fn new_secret_key(&self, buf: &mut[u8]) -> Result<usize, Box<dyn Error + 'static>> {
+		// Check the buffer length
+		let key_len = self.info().key_len;
+		check!(buf.len() >= key_len, LibsodiumError::ApiMisuse("Buffer is too small"));
+		
+		// Generate the key
+		assert!(SystemRng.is_secure());
+		SystemRng.random(&mut buf[..key_len])?;
+		Ok(key_len)
+	}
+}
 
 
+/// A XOR stream cipher implementation
+struct Xor {
+	pub cipher: Ciphers,
+	pub xor: unsafe extern "C" fn(
+		c: *mut c_uchar,
+		m: *const c_uchar,
+		mlen: c_ulonglong,
+		n: *const c_uchar,
+		k: *const c_uchar,
+	) -> c_int
+}
 impl Cipher for Xor {
 	fn info(&self) -> CipherInfo {
 		match self.cipher {
@@ -162,6 +178,18 @@ impl Cipher for Xor {
 		self.encrypt(buf, ciphertext_len, key, nonce)
 	}
 }
+impl SecKeyGen for Xor {
+	fn new_secret_key(&self, buf: &mut[u8]) -> Result<usize, Box<dyn Error + 'static>> {
+		// Check the buffer length
+		let key_len = self.info().key_len;
+		check!(buf.len() >= key_len, LibsodiumError::ApiMisuse("Buffer is too small"));
+		
+		// Generate the key
+		assert!(SystemRng.is_secure());
+		SystemRng.random(&mut buf[..key_len])?;
+		Ok(key_len)
+	}
+}
 
 
 /// Cipher implementations
@@ -191,7 +219,7 @@ impl Ciphers {
 	}
 	
 	/// Creates a new `Cipher`-instance with this implementation
-	pub fn cipher(self) -> Box<Cipher> {
+	pub fn cipher(self) -> Box<dyn Cipher> {
 		match self {
 			Ciphers::Aes256Gcm => Box::new(Aead {
 				cipher: self,
@@ -210,7 +238,7 @@ impl Ciphers {
 		}
 	}
 	/// Creates a new `AeadCipher`-instance with this implementation
-	pub fn aead_cipher(self) -> Result<Box<AeadCipher>, LibsodiumError> {
+	pub fn aead_cipher(self) -> Result<Box<dyn AeadCipher>, LibsodiumError> {
 		Ok(match self {
 			Ciphers::Aes256Gcm => Box::new(Aead {
 				cipher: self,

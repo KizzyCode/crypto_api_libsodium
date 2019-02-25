@@ -19,66 +19,70 @@ The following `crypto_api` / https://github.com/jedisct1/libsodium[libsodium]s p
 === Ciphers
 
 ==== Normal Ciphers
- * [x] https://tools.ietf.org/html/rfc7539[ChaCha20 (IETF-version)]
- * [ ] https://en.wikipedia.org/wiki/Salsa20#XChaCha[XChaCha20]
+* [x] https://tools.ietf.org/html/rfc7539[ChaCha20 (IETF-version)]
+* [ ] https://en.wikipedia.org/wiki/Salsa20#XChaCha[XChaCha20]
 
 ==== AEAD Ciphers
- * [x] https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf[AES-256-GCM]
- * [x] https://tools.ietf.org/html/rfc7539[ChaCha20-Poly1305 (IETF-version)]
- * [ ] https://download.libsodium.org/doc/secret-key_cryptography/aead/chacha20-poly1305/xchacha20-poly1305_construction[XChaCha20-Poly1305]
+* [x] https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf[AES-256-GCM]
+* [x] https://tools.ietf.org/html/rfc7539[ChaCha20-Poly1305 (IETF-version)]
+* [ ] https://download.libsodium.org/doc/secret-key_cryptography/aead/chacha20-poly1305/xchacha20-poly1305_construction[XChaCha20-Poly1305]
 
 ==== Streaming API
- * [ ] https://tools.ietf.org/html/rfc7539[ChaCha20 (IETF-version)]
- * [ ] https://en.wikipedia.org/wiki/Salsa20#XChaCha[XChaCha20]
+* [ ] https://tools.ietf.org/html/rfc7539[ChaCha20 (IETF-version)]
+* [ ] https://en.wikipedia.org/wiki/Salsa20#XChaCha[XChaCha20]
 
 
 === Hashes
 
 ==== Stateless API
- * [ ] https://tools.ietf.org/html/rfc6234[SHA2-256]
- * [ ] https://tools.ietf.org/html/rfc6234[SHA2-512]
+* [ ] https://tools.ietf.org/html/rfc6234[SHA2-256]
+* [ ] https://tools.ietf.org/html/rfc6234[SHA2-512]
 
 ==== Variable Length Stateless API
- * [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
+* [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
 
 ==== Streaming API
- * [ ] https://tools.ietf.org/html/rfc6234[SHA2-256]
- * [ ] https://tools.ietf.org/html/rfc6234[SHA2-512]
+* [ ] https://tools.ietf.org/html/rfc6234[SHA2-256]
+* [ ] https://tools.ietf.org/html/rfc6234[SHA2-512]
 
 ==== Variable Length Streaming API
- * [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
+* [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
 
 
 === KDFs
- * [ ] https://tools.ietf.org/html/rfc5869[HKDF] SHA2-256
- * [ ] https://tools.ietf.org/html/rfc5869[HKDF] SHA2-512
- * [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
+* [ ] https://tools.ietf.org/html/rfc5869[HKDF] SHA2-256
+* [ ] https://tools.ietf.org/html/rfc5869[HKDF] SHA2-512
+* [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
 
 
 === MACs
 
 ==== Stateless MAC API
- * [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-256
- * [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-512
- * [ ] https://tools.ietf.org/html/rfc7539[Poly1305]
- * [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
+* [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-256
+* [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-512
+* [ ] https://tools.ietf.org/html/rfc7539[Poly1305]
+* [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
 
 ==== Streaming MAC API
- * [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-256
- * [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-512
- * [ ] https://tools.ietf.org/html/rfc7539[Poly1305]
- * [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
+* [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-256
+* [ ] https://tools.ietf.org/html/rfc4868[HMAC] SHA2-512
+* [ ] https://tools.ietf.org/html/rfc7539[Poly1305]
+* [ ] https://tools.ietf.org/html/rfc7693[Blake2b]
 
 
 === PBKDFs
 
 ==== Memory-Hard PBKDFs
- * [ ] https://www.cryptolux.org/images/0/0d/Argon2.pdf[Argon2i v1.3]
- * [ ] https://www.cryptolux.org/images/0/0d/Argon2.pdf[Argon2id v1.3]
+* [x] https://www.cryptolux.org/images/0/0d/Argon2.pdf[Argon2i v1.3]
+* [x] https://www.cryptolux.org/images/0/0d/Argon2.pdf[Argon2id v1.3]
 
 
 === RNGs
 
 ==== Cryptographically Secure RNGs
- * [x] The operating system's cryptographically secure RNG
- * [ ] A deterministic cryptographically secure RNG
+* [x] The operating system's cryptographically secure RNG
+* [ ] A deterministic cryptographically secure RNG
+
+
+=== Asymmetric Signers
+* [ ] https://tools.ietf.org/html/rfc8032[Ed25519]

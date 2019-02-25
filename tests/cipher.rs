@@ -1,29 +1,26 @@
-#![allow(unused)]
-
-use ::{
-	crypto_api::cipher::{ CipherInfo, Cipher, AeadCipher },
-	crypto_api_libsodium::{ LibsodiumError, Ciphers },
-	std::{ ptr, slice, error::Error }
-};
+use crypto_api::cipher::CipherInfo;
+use crypto_api_libsodium::{ LibsodiumError, Ciphers };
 
 
-struct PropertyTestVector {
-	pub name: &'static str,
-	pub key_len: usize,
-	pub nonce_len: usize,
-	pub aead_tag_len: Option<usize>
+/// A helper macro to compare a `Box<dyn Error + 'static>` to a `LibsodiumError`
+macro_rules! compare_err {
+	($err:expr, $expected:expr) => (
+		assert_eq!(*$err.downcast_ref::<LibsodiumError>().unwrap(), $expected)
+	);
 }
-impl PropertyTestVector {
-	pub fn test(&self) {
+
+
+/// A trait to extend the info-structs with the ability to test them
+trait PropertyTest {
+	fn test(&self);
+}
+impl PropertyTest for CipherInfo {
+	fn test(&self) {
 		// Create cipher
 		let cipher = Ciphers::from_name(self.name).unwrap().cipher();
 		
 		// Test against `info()`
-		let info = cipher.info();
-		assert_eq!(info.name, self.name);
-		assert_eq!(info.key_len, self.key_len);
-		assert_eq!(info.nonce_len, self.nonce_len);
-		assert_eq!(info.aead_tag_len, self.aead_tag_len);
+		assert_eq!(*self, cipher.info());
 		
 		// Test buffer lengths...
 		let aead_len = self.aead_tag_len.unwrap_or(0);
@@ -33,24 +30,19 @@ impl PropertyTestVector {
 			&mut vec![0; aead_len], 1,
 			&vec![0; self.key_len], &vec![0u8; self.nonce_len]
 		).unwrap_err();
-		assert_eq!(
-			err.description(),
-			LibsodiumError::ApiMisuse("Buffer is too small").description()
-		);
+		compare_err!(err, LibsodiumError::ApiMisuse("Buffer is too small"));
 		
 		// ...for decryption
 		let err = cipher.decrypt(
 			&mut vec![0; aead_len], aead_len + 1,
 			&vec![0; self.key_len], &vec![0u8; self.nonce_len]
 		).unwrap_err();
-		assert_eq!(
-			err.description(),
-			LibsodiumError::ApiMisuse("Buffer is too small").description()
-		);
+		compare_err!(err, LibsodiumError::ApiMisuse("Buffer is too small"));
 	}
 }
 
 
+/// A test vector to test a cipher
 struct CipherTestVector {
 	pub name: &'static str,
 	
@@ -115,6 +107,7 @@ impl CipherTestVector {
 }
 
 
+/// A test vector to test an AEAD cipher
 struct AeadErrorTestVector {
 	pub name: &'static str,
 	
@@ -133,13 +126,35 @@ impl AeadErrorTestVector {
 			&mut self.ciphertext.to_vec(), self.ciphertext.len(), &self.ad,
 			self.key, self.nonce
 		).unwrap_err();
-		assert_eq!(err.description(), LibsodiumError::InvalidData.description());
+		compare_err!(err, LibsodiumError::InvalidData);
 	}
 }
 
 
 #[test]
 fn test() {
+	CipherInfo {
+		name: "Aes256Gcm",
+		key_len: 32,
+		nonce_len: 12,
+		aead_tag_len: Some(16)
+	}.test();
+	
+	CipherInfo {
+		name: "ChaCha20Poly1305Ietf",
+		key_len: 32,
+		nonce_len: 12,
+		aead_tag_len: Some(16)
+	}.test();
+	
+	CipherInfo {
+		name: "ChaCha20Ietf",
+		key_len: 32,
+		nonce_len: 12,
+		aead_tag_len: None
+	}.test();
+	
+	
 	CipherTestVector {
 		name: "Aes256Gcm",
 		
@@ -252,29 +267,6 @@ fn test() {
 		plaintext: [0u8; 256].as_ref(),
 		ad: &[],
 		ciphertext: b"\xf7\x98\xa1\x89\xf1\x95\xe6\x69\x82\x10\x5f\xfb\x64\x0b\xb7\x75\x7f\x57\x9d\xa3\x16\x02\xfc\x93\xec\x01\xac\x56\xf8\x5a\xc3\xc1\x34\xa4\x54\x7b\x73\x3b\x46\x41\x30\x42\xc9\x44\x00\x49\x17\x69\x05\xd3\xbe\x59\xea\x1c\x53\xf1\x59\x16\x15\x5c\x2b\xe8\x24\x1a\x38\x00\x8b\x9a\x26\xbc\x35\x94\x1e\x24\x44\x17\x7c\x8a\xde\x66\x89\xde\x95\x26\x49\x86\xd9\x58\x89\xfb\x60\xe8\x46\x29\xc9\xbd\x9a\x5a\xcb\x1c\xc1\x18\xbe\x56\x3e\xb9\xb3\xa4\xa4\x72\xf8\x2e\x09\xa7\xe7\x78\x49\x2b\x56\x2e\xf7\x13\x0e\x88\xdf\xe0\x31\xc7\x9d\xb9\xd4\xf7\xc7\xa8\x99\x15\x1b\x9a\x47\x50\x32\xb6\x3f\xc3\x85\x24\x5f\xe0\x54\xe3\xdd\x5a\x97\xa5\xf5\x76\xfe\x06\x40\x25\xd3\xce\x04\x2c\x56\x6a\xb2\xc5\x07\xb1\x38\xdb\x85\x3e\x3d\x69\x59\x66\x09\x96\x54\x6c\xc9\xc4\xa6\xea\xfd\xc7\x77\xc0\x40\xd7\x0e\xaf\x46\xf7\x6d\xad\x39\x79\xe5\xc5\x36\x0c\x33\x17\x16\x6a\x1c\x89\x4c\x94\xa3\x71\x87\x6a\x94\xdf\x76\x28\xfe\x4e\xaa\xf2\xcc\xb2\x7d\x5a\xaa\xe0\xad\x7a\xd0\xf9\xd4\xb6\xad\x3b\x54\x09\x87\x46\xd4\x52\x4d\x38\x40\x7a\x6d\xeb\x3a\xb7\x8f\xab\x78\xc9".as_ref()
-	}.test();
-	
-	
-	
-	PropertyTestVector {
-		name: "Aes256Gcm",
-		key_len: 32,
-		nonce_len: 12,
-		aead_tag_len: Some(16)
-	}.test();
-	
-	PropertyTestVector {
-		name: "ChaCha20Poly1305Ietf",
-		key_len: 32,
-		nonce_len: 12,
-		aead_tag_len: Some(16)
-	}.test();
-	
-	PropertyTestVector {
-		name: "ChaCha20Ietf",
-		key_len: 32,
-		nonce_len: 12,
-		aead_tag_len: None
 	}.test();
 	
 	
