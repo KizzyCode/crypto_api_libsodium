@@ -18,7 +18,10 @@ use crate::{
 		crypto_pwhash_argon2id_MEMLIMIT_SENSITIVE, crypto_pwhash_argon2id_ALG_ARGON2ID13
 	}
 };
-use std::{ error::Error, os::raw::{ c_char, c_uchar, c_int, c_ulonglong } };
+use std::{
+	error::Error,
+	os::raw::{ c_char, c_uchar, c_int, c_ulonglong }
+};
 use crypto_api::pbkdf::{ Pbkdf, MemoryHardPbkdf, PbkdfInfo, MemoryHardPbkdfInfo };
 
 
