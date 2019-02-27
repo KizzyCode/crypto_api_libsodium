@@ -22,13 +22,52 @@ impl PropertyTest for CipherInfo {
 		// Test against `info()`
 		assert_eq!(*self, cipher.info());
 		
+		
+		// Macro for easier test calls
+		macro_rules! t {
+			($l2:expr, $l3:expr) => ({
+				let al = self.aead_tag_len.unwrap_or(0) + 8;
+				let (mut a0, a2, a3) = (vec![0; al], vec![0; $l2], vec![0; $l3]);
+				(
+					cipher.encrypt(&mut a0, 8, &a2, &a3).unwrap_err(),
+					cipher.decrypt(&mut a0, al, &a2, &a3).unwrap_err()
+				)
+			});
+			(2: $l2:expr) => (t!($l2, self.nonce_len));
+			(3: $l3:expr) => (t!(self.key_len, $l3));
+		};
+		
+		// Test key length
+		let (e_enc, e_dec) = t!(2: self.key_len - 1);
+		compare_err!(e_enc, LibsodiumError::ApiMisuse("Invalid key length"));
+		compare_err!(e_dec, LibsodiumError::ApiMisuse("Invalid key length"));
+		
+		let (e_enc, e_dec) = t!(2: self.key_len + 1);
+		compare_err!(e_enc, LibsodiumError::ApiMisuse("Invalid key length"));
+		compare_err!(e_dec, LibsodiumError::ApiMisuse("Invalid key length"));
+		
+		// Test nonce length
+		let (e_enc, e_dec) = t!(3: self.nonce_len - 1);
+		compare_err!(e_enc, LibsodiumError::ApiMisuse("Invalid nonce length"));
+		compare_err!(e_dec, LibsodiumError::ApiMisuse("Invalid nonce length"));
+		
+		let (e_enc, e_dec) = t!(3: self.nonce_len + 1);
+		compare_err!(e_enc, LibsodiumError::ApiMisuse("Invalid nonce length"));
+		compare_err!(e_dec, LibsodiumError::ApiMisuse("Invalid nonce length"));
+		
+		
+		// Test key generation
+		let err = cipher.new_sec_key(&mut vec![0; self.key_len - 1]).unwrap_err();
+		compare_err!(err, LibsodiumError::ApiMisuse("Buffer is too small"));
+		
+		
 		// Test buffer lengths...
 		let aead_len = self.aead_tag_len.unwrap_or(0);
 		
 		// ...for encryption
 		let err = cipher.encrypt(
 			&mut vec![0; aead_len], 1,
-			&vec![0; self.key_len], &vec![0u8; self.nonce_len]
+			&vec![0; self.key_len], &vec![0; self.nonce_len]
 		).unwrap_err();
 		compare_err!(err, LibsodiumError::ApiMisuse("Buffer is too small"));
 		
@@ -59,7 +98,6 @@ impl CipherTestVector {
 			_ => self.test_aead_cipher()
 		}
 	}
-	
 	fn test_cipher(&self) {
 		// Create cipher and test if cipher is available
 		let cipher = Ciphers::from_name(self.name).unwrap().cipher();

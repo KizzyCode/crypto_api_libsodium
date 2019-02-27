@@ -27,6 +27,7 @@ impl PropertyTest for PbkdfInfo {
 		// Test against `info()`
 		assert_eq!(*self, pbkdf.info());
 		
+		
 		// Macro for easier test calls
 		macro_rules! t {
 			($l0:expr, $l1:expr, $l2:expr, $a3:expr) => ({
@@ -78,6 +79,7 @@ impl PropertyTest for PbkdfInfo {
 			let err = t!(3: self.cpu_cost_max + 1);
 			compare_err!(err, LibsodiumError::ApiMisuse("CPU cost is too large"))
 		}
+		
 		
 		// Test memory hard PBKDF constraints if available
 		if let Some(info) = self.memory_hard_pbkdf_info {

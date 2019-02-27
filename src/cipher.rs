@@ -111,7 +111,7 @@ impl AeadCipher for Aead {
 	}
 }
 impl SecKeyGen for Aead {
-	fn new_secret_key(&self, buf: &mut[u8]) -> Result<usize, Box<dyn Error + 'static>> {
+	fn new_sec_key(&self, buf: &mut[u8]) -> Result<usize, Box<dyn Error + 'static>> {
 		// Check the buffer length
 		let key_len = self.info().key_len;
 		check!(buf.len() >= key_len, LibsodiumError::ApiMisuse("Buffer is too small"));
@@ -179,7 +179,7 @@ impl Cipher for Xor {
 	}
 }
 impl SecKeyGen for Xor {
-	fn new_secret_key(&self, buf: &mut[u8]) -> Result<usize, Box<dyn Error + 'static>> {
+	fn new_sec_key(&self, buf: &mut[u8]) -> Result<usize, Box<dyn Error + 'static>> {
 		// Check the buffer length
 		let key_len = self.info().key_len;
 		check!(buf.len() >= key_len, LibsodiumError::ApiMisuse("Buffer is too small"));
