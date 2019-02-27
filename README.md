@@ -81,4 +81,4 @@ The following `crypto_api`/[libsodium](https://github.com/jedisct1/libsodium) pr
 
 
 ### Asymmetric Signers
-- [ ] [Ed25519](https://tools.ietf.org/html/rfc8032)
+- [x] [Ed25519](https://tools.ietf.org/html/rfc8032)

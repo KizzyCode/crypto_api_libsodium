@@ -22,10 +22,11 @@ mod sodium_bindings;
 pub mod cipher;
 pub mod pbkdf;
 pub mod rng;
+pub mod signer;
 
 
 // Uses and reexports
-pub use crate::{ cipher::Ciphers, pbkdf::Pbkdfs, rng::SystemRng };
+pub use crate::{ cipher::Ciphers, pbkdf::Pbkdfs, rng::SystemRng, signer::Signers };
 pub use crypto_api;
 use std::{ error::Error, fmt::{ Display, Formatter, Result as FmtResult } };
 
