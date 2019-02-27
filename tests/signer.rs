@@ -1,4 +1,4 @@
-use crypto_api::{ rng::Rng, signer::SignerInfo };
+use crypto_api::{ rng::SecureRng, signer::SignerInfo };
 use crypto_api_libsodium::{ LibsodiumError, Signers, SystemRng };
 
 

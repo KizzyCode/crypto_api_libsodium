@@ -1,6 +1,6 @@
 [package]
 name = "crypto_api_libsodium"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Keziah Biermann <development@kizzycode.de>"]
 description = "This crate defines a general purpose API for various cryptographic primitives"
 license = "BSD-2-Clause OR MIT"
@@ -17,7 +17,7 @@ overflow-checks = true
 
 
 [dependencies]
-crypto_api = { git = "https://github.com/KizzyCode/crypto_api", version = "0.1.8" }
+crypto_api = { git = "https://github.com/KizzyCode/crypto_api", version = "0.1.9" }
 
 [build-dependencies]
 pkg-config = "0.3.14"

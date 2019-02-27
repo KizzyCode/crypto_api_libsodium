@@ -11,7 +11,7 @@ use std::{
 	os::raw::{ c_uchar, c_int, c_ulonglong }
 };
 use crypto_api::{
-	rng::{ Rng, SecKeyGen },
+	rng::{ SecureRng, SecKeyGen },
 	cipher::{ CipherInfo, Cipher, AeadCipher }
 };
 
@@ -117,7 +117,6 @@ impl SecKeyGen for Aead {
 		check!(buf.len() >= key_len, LibsodiumError::ApiMisuse("Buffer is too small"));
 		
 		// Generate the key
-		assert!(SystemRng.is_secure());
 		SystemRng.random(&mut buf[..key_len])?;
 		Ok(key_len)
 	}
@@ -185,7 +184,6 @@ impl SecKeyGen for Xor {
 		check!(buf.len() >= key_len, LibsodiumError::ApiMisuse("Buffer is too small"));
 		
 		// Generate the key
-		assert!(SystemRng.is_secure());
 		SystemRng.random(&mut buf[..key_len])?;
 		Ok(key_len)
 	}
